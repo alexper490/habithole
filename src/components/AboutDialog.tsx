@@ -19,7 +19,7 @@ export const AboutDialog = ({ open, onOpenChange }: AboutDialogProps) => {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+      <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto rounded-lg mx-4 w-[calc(100%-2rem)] sm:w-full sm:mx-0">
         <DialogHeader>
           <DialogTitle className="text-2xl">About habithole</DialogTitle>
         </DialogHeader>

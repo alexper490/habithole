@@ -1,14 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '@/context/AppContext';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import jsPDF from 'jspdf';
-import { Download, Home } from 'lucide-react';
+import { Download, Home, Info } from 'lucide-react';
+import { AboutDialog } from '@/components/AboutDialog';
 
 export const ActionPlan = () => {
   const navigate = useNavigate();
   const { actionPlan, formData } = useApp();
+  const [aboutOpen, setAboutOpen] = useState(false);
 
   useEffect(() => {
     if (!actionPlan) {
@@ -131,9 +133,14 @@ export const ActionPlan = () => {
               <Home className="h-5 w-5" />
               Start a New Plan
             </Button>
+            <Button size="lg" variant="outline" onClick={() => setAboutOpen(true)} className="gap-2">
+              <Info className="h-5 w-5" />
+              About the Program
+            </Button>
           </div>
         </Card>
       </div>
+      <AboutDialog open={aboutOpen} onOpenChange={setAboutOpen} />
     </div>
   );
 };
