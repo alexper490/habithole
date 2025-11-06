@@ -1,0 +1,81 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Autumn Theme - Warm & Cozy */
+    --background: 45 86% 95%;  /* Cream #FEF7E7 */
+    --foreground: 30 73% 15%;  /* Dark brown #451A03 */
+
+    --card: 43 100% 96%;  /* Light cream #FEF3C7 */
+    --card-foreground: 30 73% 15%;
+
+    --popover: 43 100% 96%;
+    --popover-foreground: 30 73% 15%;
+
+    /* Primary: Warm Orange */
+    --primary: 36 91% 44%;  /* #D97706 */
+    --primary-foreground: 43 100% 96%;
+    
+    /* Secondary: Deep Red */
+    --secondary: 0 84% 49%;  /* #DC2626 */
+    --secondary-foreground: 43 100% 96%;
+
+    /* Muted: Lighter autumn tones */
+    --muted: 45 86% 88%;
+    --muted-foreground: 30 50% 35%;
+
+    /* Accent: Golden Yellow */
+    --accent: 45 97% 64%;  /* #FCD34D */
+    --accent-foreground: 30 73% 15%;
+
+    --destructive: 0 72% 51%;  /* #B91C1C */
+    --destructive-foreground: 43 100% 96%;
+
+    --border: 45 86% 85%;
+    --input: 45 86% 85%;
+    --ring: 36 91% 44%;
+
+    --radius: 0.75rem;
+
+    /* Custom autumn gradients */
+    --gradient-autumn: linear-gradient(135deg, hsl(36 91% 44%), hsl(0 84% 49%));
+    --gradient-warm: linear-gradient(180deg, hsl(45 97% 64%), hsl(36 91% 44%));
+    
+    /* Chat bubbles */
+    --chat-user: 36 91% 44%;  /* Warm orange for user */
+    --chat-bot: 43 100% 96%;  /* Light cream for bot */
+    
+    /* Shadows with warm tones */
+    --shadow-soft: 0 4px 20px -4px hsl(36 91% 44% / 0.15);
+    --shadow-medium: 0 8px 30px -6px hsl(36 91% 44% / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes pulse-color {
+  0%, 100% {
+    background-color: hsl(var(--muted));
+  }
+  50% {
+    background-color: hsl(36 91% 35% / 0.3);
+  }
+}
+
+.animate-pulse-color {
+  animation: pulse-color 2.5s ease-in-out infinite;
+}
