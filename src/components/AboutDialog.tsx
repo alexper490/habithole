@@ -25,6 +25,13 @@ export const AboutDialog = ({ open, onOpenChange }: AboutDialogProps) => {
         </DialogHeader>
         
         <div className="space-y-6 py-4">
+          {/* Disclaimer */}
+          <div className="bg-muted/50 border border-border rounded-lg p-4 mb-4">
+            <p className="text-sm text-foreground leading-relaxed">
+              <strong>Important:</strong> This program is not a "coach" in any sense. It is simply a more approachable way to go through proven, evidence-based frameworks for habit building and breaking. The frameworks guide you through structured steps, but you are in control of your own journey.
+            </p>
+          </div>
+
           {/* Website Link Section - Top */}
           <div className="pb-4 border-b">
             <p className="text-sm text-muted-foreground mb-3">
